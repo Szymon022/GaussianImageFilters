@@ -1,11 +1,200 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.FXMLController">
-    <children>
-        <Label fx:id="label" text="Label" />
-    </children>
-</StackPane>
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.FXMLController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar prefHeight="22.0" prefWidth="1100.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Open..." />
+                        <MenuItem mnemonicParsing="false" text="Save as..." />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0">
+               <children>
+                  <MenuBar>
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Close" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edit">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+                  <SplitPane dividerPositions="0.7341137123745819" prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0">
+                           <children>
+                              <ImageView fitHeight="800.0" fitWidth="800.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <VBox layoutX="71.0" layoutY="293.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="268.0">
+                                       <children>
+                                          <Label text="Filter area">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="4.0" />
+                                             </VBox.margin>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                          </Label>
+                                          <RadioButton mnemonicParsing="false" selected="true" text="Whole image area">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                             <VBox.margin>
+                                                <Insets bottom="8.0" />
+                                             </VBox.margin>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="filterArea" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton mnemonicParsing="false" text="Circular image area" toggleGroup="$filterArea">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                             <VBox.margin>
+                                                <Insets bottom="8.0" />
+                                             </VBox.margin>
+                                          </RadioButton>
+                                          <VBox disable="true" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label prefHeight="18.0" prefWidth="82.0" text="Radius">
+                                                   <padding>
+                                                      <Insets left="8.0" right="8.0" top="4.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Slider min="10.0" prefHeight="47.0" prefWidth="219.0" showTickLabels="true" showTickMarks="true" value="10.0">
+                                                   <VBox.margin>
+                                                      <Insets left="8.0" right="8.0" />
+                                                   </VBox.margin>
+                                                </Slider>
+                                             </children>
+                                          </VBox>
+                                          <RadioButton mnemonicParsing="false" text="Polygonal area" toggleGroup="$filterArea">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                             <VBox.margin>
+                                                <Insets bottom="8.0" />
+                                             </VBox.margin>
+                                          </RadioButton>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="16.0" />
+                                       </VBox.margin>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Label text="Filter selection">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <RadioButton mnemonicParsing="false" selected="true" text="Identity matrix">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="filterSelection" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton mnemonicParsing="false" text="Gaussian blur 3x3 kernel" toggleGroup="$filterSelection">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                          </RadioButton>
+                                          <RadioButton mnemonicParsing="false" text="Gaussian blur 5x5 kernel" toggleGroup="$filterSelection">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                          </RadioButton>
+                                          <RadioButton mnemonicParsing="false" text="Gaussian sharpen 3x3 kernel" toggleGroup="$filterSelection">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                          </RadioButton>
+                                          <RadioButton mnemonicParsing="false" text="Gaussian sharpen 5x5" toggleGroup="$filterSelection">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                          </RadioButton>
+                                          <RadioButton mnemonicParsing="false" text="Edge detection kernel" toggleGroup="$filterSelection">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                          </RadioButton>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </VBox>
+                                    <Button alignment="TOP_CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="30.0" prefWidth="289.0" text="Apply filter">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
