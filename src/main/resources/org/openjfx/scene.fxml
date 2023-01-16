@@ -25,38 +25,19 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Open..." />
-                        <MenuItem mnemonicParsing="false" text="Save as..." />
+                    <MenuItem fx:id="openMenuItem" mnemonicParsing="false" onAction="#onOpenMenuItemClick" text="Open..." />
+                        <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" onAction="#onSaveAsMenuItemClick" text="Save as..." />
                   </items>
                 </Menu>
                   <Menu mnemonicParsing="false" text="Edit">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Reset" />
+                        <MenuItem fx:id="resetMenuItem" mnemonicParsing="false" onAction="#onResetMenuItemClick" text="Reset" />
                      </items>
                   </Menu>
               </menus>
             </MenuBar>
             <StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0">
                <children>
-                  <MenuBar>
-                    <menus>
-                      <Menu mnemonicParsing="false" text="File">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Close" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Edit">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Delete" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Help">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="About" />
-                        </items>
-                      </Menu>
-                    </menus>
-                  </MenuBar>
                   <SplitPane dividerPositions="0.7341137123745819" prefHeight="160.0" prefWidth="200.0">
                     <items>
                       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0">
@@ -107,21 +88,21 @@
                                                 <Insets bottom="8.0" />
                                              </VBox.margin>
                                           </RadioButton>
-                                          <VBox disable="true" prefHeight="200.0" prefWidth="100.0">
+                                          <VBox fx:id="sliderLayout" disable="true" prefHeight="200.0" prefWidth="100.0">
                                              <children>
                                                 <Label prefHeight="18.0" prefWidth="82.0" text="Radius">
                                                    <padding>
                                                       <Insets left="8.0" right="8.0" top="4.0" />
                                                    </padding>
                                                 </Label>
-                                                <Slider min="10.0" prefHeight="47.0" prefWidth="219.0" showTickLabels="true" showTickMarks="true" value="10.0">
+                                                <Slider fx:id="radiusSlider" min="10.0" prefHeight="47.0" prefWidth="219.0" showTickLabels="true" showTickMarks="true" value="10.0">
                                                    <VBox.margin>
                                                       <Insets left="8.0" right="8.0" />
                                                    </VBox.margin>
                                                 </Slider>
                                              </children>
                                           </VBox>
-                                          <RadioButton mnemonicParsing="false" text="Polygonal area" toggleGroup="$filterArea">
+                                          <RadioButton fx:id="polygonalAreaRadioButton" mnemonicParsing="false" onAction="#onPolygonalAreaRadioButtonSelected" text="Polygonal area" toggleGroup="$filterArea">
                                              <padding>
                                                 <Insets left="8.0" right="8.0" top="4.0" />
                                              </padding>
@@ -144,7 +125,7 @@
                                                 <Font size="20.0" />
                                              </font>
                                           </Label>
-                                          <RadioButton mnemonicParsing="false" onAction="#onIdentityMatrixRadioButtonSelected" selected="true" text="Identity matrix">
+                                          <RadioButton fx:id="identityMatrixKernelRadioButton" mnemonicParsing="false" onAction="#onIdentityMatrixRadioButtonSelected" selected="true" text="Identity matrix">
                                              <padding>
                                                 <Insets left="8.0" right="8.0" top="4.0" />
                                              </padding>
@@ -152,27 +133,27 @@
                                                 <ToggleGroup fx:id="filterSelection" />
                                              </toggleGroup>
                                           </RadioButton>
-                                          <RadioButton mnemonicParsing="false" onAction="#on3x3BlurMatrixRadioButtonSelected" text="Gaussian blur 3x3 kernel" toggleGroup="$filterSelection">
+                                          <RadioButton fx:id="blur3x3MatrixKernelRadioButton" mnemonicParsing="false" onAction="#on3x3BlurMatrixRadioButtonSelected" text="Gaussian blur 3x3 kernel" toggleGroup="$filterSelection">
                                              <padding>
                                                 <Insets left="8.0" right="8.0" top="4.0" />
                                              </padding>
                                           </RadioButton>
-                                          <RadioButton mnemonicParsing="false" text="Gaussian blur 5x5 kernel" toggleGroup="$filterSelection">
+                                          <RadioButton fx:id="blur5x5MatrixKernelRadioButton" mnemonicParsing="false" onAction="#on5x5BlurMatrixRadioButtonSelected" text="Gaussian blur 5x5 kernel" toggleGroup="$filterSelection">
                                              <padding>
                                                 <Insets left="8.0" right="8.0" top="4.0" />
                                              </padding>
                                           </RadioButton>
-                                          <RadioButton mnemonicParsing="false" text="Gaussian sharpen 3x3 kernel" toggleGroup="$filterSelection">
+                                          <RadioButton fx:id="sharpen3x3MatrixKernelRadioButton" mnemonicParsing="false" onAction="#on3x3SharpenMatrixRadioButtonSelected" text="Gaussian sharpen 3x3 kernel" toggleGroup="$filterSelection">
                                              <padding>
                                                 <Insets left="8.0" right="8.0" top="4.0" />
                                              </padding>
                                           </RadioButton>
-                                          <RadioButton mnemonicParsing="false" text="Gaussian sharpen 5x5 kernel" toggleGroup="$filterSelection">
+                                          <RadioButton fx:id="sharpen5x5MatrixKernelRadioButton" mnemonicParsing="false" onAction="#on5x5SharpenMatrixRadioButtonSelected" text="Gaussian sharpen 5x5 kernel" toggleGroup="$filterSelection">
                                              <padding>
                                                 <Insets left="8.0" right="8.0" top="4.0" />
                                              </padding>
                                           </RadioButton>
-                                          <RadioButton mnemonicParsing="false" text="Edge detection 3x3 kernel" toggleGroup="$filterSelection">
+                                          <RadioButton fx:id="edgeDetectionMatrixKernelRadioButton" mnemonicParsing="false" onAction="#onEdgeDetectionMatrixRadioButtonSelected" text="Edge detection 3x3 kernel" toggleGroup="$filterSelection">
                                              <padding>
                                                 <Insets left="8.0" right="8.0" top="4.0" />
                                              </padding>
@@ -187,7 +168,7 @@
                                     </VBox>
                                  </children>
                               </VBox>
-                              <Button alignment="TOP_CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="30.0" prefWidth="289.0" text="Apply filter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                              <Button fx:id="applyButton" alignment="TOP_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onApplyButtonClick" prefHeight="30.0" prefWidth="289.0" text="Apply filter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
