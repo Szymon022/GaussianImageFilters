@@ -17,7 +17,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.FXMLController">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -30,6 +29,11 @@
                         <MenuItem mnemonicParsing="false" text="Save as..." />
                   </items>
                 </Menu>
+                  <Menu mnemonicParsing="false" text="Edit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Reset" />
+                     </items>
+                  </Menu>
               </menus>
             </MenuBar>
             <StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0">
@@ -57,7 +61,7 @@
                     <items>
                       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0">
                            <children>
-                              <ImageView fitHeight="800.0" fitWidth="800.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                              <ImageView fx:id="imageView" fitHeight="800.0" fitWidth="800.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                                  <cursor>
                                     <Cursor fx:constant="DEFAULT" />
                                  </cursor>
@@ -84,7 +88,7 @@
                                                 <Insets />
                                              </opaqueInsets>
                                           </Label>
-                                          <RadioButton mnemonicParsing="false" selected="true" text="Whole image area">
+                                          <RadioButton fx:id="wholeImageRadioButton" mnemonicParsing="false" onAction="#onWholeImageRadioButtonSelected" selected="true" text="Whole image area">
                                              <padding>
                                                 <Insets left="8.0" right="8.0" top="4.0" />
                                              </padding>
@@ -95,7 +99,7 @@
                                                 <ToggleGroup fx:id="filterArea" />
                                              </toggleGroup>
                                           </RadioButton>
-                                          <RadioButton mnemonicParsing="false" text="Circular image area" toggleGroup="$filterArea">
+                                          <RadioButton fx:id="circularAreaRadioButton" mnemonicParsing="false" onAction="#onCircularAreaRadioButtonSelected" text="Circular image area" toggleGroup="$filterArea">
                                              <padding>
                                                 <Insets left="8.0" right="8.0" top="4.0" />
                                              </padding>
@@ -140,7 +144,7 @@
                                                 <Font size="20.0" />
                                              </font>
                                           </Label>
-                                          <RadioButton mnemonicParsing="false" selected="true" text="Identity matrix">
+                                          <RadioButton mnemonicParsing="false" onAction="#onIdentityMatrixRadioButtonSelected" selected="true" text="Identity matrix">
                                              <padding>
                                                 <Insets left="8.0" right="8.0" top="4.0" />
                                              </padding>
@@ -148,7 +152,7 @@
                                                 <ToggleGroup fx:id="filterSelection" />
                                              </toggleGroup>
                                           </RadioButton>
-                                          <RadioButton mnemonicParsing="false" text="Gaussian blur 3x3 kernel" toggleGroup="$filterSelection">
+                                          <RadioButton mnemonicParsing="false" onAction="#on3x3BlurMatrixRadioButtonSelected" text="Gaussian blur 3x3 kernel" toggleGroup="$filterSelection">
                                              <padding>
                                                 <Insets left="8.0" right="8.0" top="4.0" />
                                              </padding>
@@ -163,12 +167,12 @@
                                                 <Insets left="8.0" right="8.0" top="4.0" />
                                              </padding>
                                           </RadioButton>
-                                          <RadioButton mnemonicParsing="false" text="Gaussian sharpen 5x5" toggleGroup="$filterSelection">
+                                          <RadioButton mnemonicParsing="false" text="Gaussian sharpen 5x5 kernel" toggleGroup="$filterSelection">
                                              <padding>
                                                 <Insets left="8.0" right="8.0" top="4.0" />
                                              </padding>
                                           </RadioButton>
-                                          <RadioButton mnemonicParsing="false" text="Edge detection kernel" toggleGroup="$filterSelection">
+                                          <RadioButton mnemonicParsing="false" text="Edge detection 3x3 kernel" toggleGroup="$filterSelection">
                                              <padding>
                                                 <Insets left="8.0" right="8.0" top="4.0" />
                                              </padding>
@@ -181,13 +185,13 @@
                                           <Insets />
                                        </VBox.margin>
                                     </VBox>
-                                    <Button alignment="TOP_CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="30.0" prefWidth="289.0" text="Apply filter">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Button>
                                  </children>
                               </VBox>
+                              <Button alignment="TOP_CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="30.0" prefWidth="289.0" text="Apply filter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
                            </children>
                         </AnchorPane>
                     </items>
