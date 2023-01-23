@@ -5,7 +5,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.PixelReader;
 import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;
-import org.openjfx.geometry.Area;
+import org.openjfx.area.Area;
 import org.openjfx.kernels.Kernel;
 import org.openjfx.loader.ImageLoader;
 
