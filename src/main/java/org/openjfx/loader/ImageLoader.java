@@ -1,7 +1,7 @@
 package org.openjfx.loader;
 
 import javafx.embed.swing.SwingFXUtils;
-import javafx.scene.image.Image;
+import javafx.scene.image.WritableImage;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class ImageLoader {
 
-    public static Image load(File image) {
+    public static WritableImage load(File image) {
         try {
             var bufferedImage = ImageIO.read(image);
             var clonedImage = deepClone(bufferedImage);

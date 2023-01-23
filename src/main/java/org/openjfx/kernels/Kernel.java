@@ -6,11 +6,13 @@ public abstract class Kernel {
     private final float[][] values;
     private final float divider;
     private final int rank;
+    private final int offset;
 
     public Kernel(float[][] values, Float divider) {
         this.values = values;
-        this.rank = calculateRank();
+        rank = calculateRank();
         this.divider = Objects.requireNonNullElseGet(divider, this::calculateDivider);
+        offset = rank / 2;
     }
 
     private int calculateRank() {
@@ -45,5 +47,9 @@ public abstract class Kernel {
 
     public int getRank() {
         return rank;
+    }
+
+    public int getOffset() {
+        return offset;
     }
 }
