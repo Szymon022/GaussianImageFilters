@@ -30,23 +30,15 @@ public abstract class Kernel {
                 sum += value;
             }
         }
-        return sum / (rank * rank);
+        return sum;
     }
 
     public float getValue(int i, int j) {
         return values[i][j];
     }
 
-    public float[][] getValues() {
-        return values;
-    }
-
     public float getDivider() {
         return divider;
-    }
-
-    public int getRank() {
-        return rank;
     }
 
     public int getOffset() {
