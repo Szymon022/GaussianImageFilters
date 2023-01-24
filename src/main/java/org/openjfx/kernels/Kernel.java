@@ -5,12 +5,11 @@ import java.util.Objects;
 public abstract class Kernel {
     private final float[][] values;
     private final float divider;
-    private final int rank;
     private final int offset;
 
     public Kernel(float[][] values, Float divider) {
         this.values = values;
-        rank = calculateRank();
+        int rank = calculateRank();
         this.divider = Objects.requireNonNullElseGet(divider, this::calculateDivider);
         offset = rank / 2;
     }
@@ -24,29 +23,21 @@ public abstract class Kernel {
     }
 
     private float calculateDivider() {
-        var sum = 0.0f;
+        var divider = 0.0f;
         for (float[] row : values) {
             for (float value : row) {
-                sum += value;
+                divider += value;
             }
         }
-        return sum / (rank * rank);
+        return divider;
     }
 
     public float getValue(int i, int j) {
         return values[i][j];
     }
 
-    public float[][] getValues() {
-        return values;
-    }
-
     public float getDivider() {
         return divider;
-    }
-
-    public int getRank() {
-        return rank;
     }
 
     public int getOffset() {
