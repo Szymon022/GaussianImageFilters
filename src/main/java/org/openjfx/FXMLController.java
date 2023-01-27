@@ -13,10 +13,7 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import org.openjfx.drawing.AreaPainter;
-import org.openjfx.drawing.AreaSelector;
-import org.openjfx.drawing.CircleAreaSelector;
-import org.openjfx.drawing.RectangularAreaSelector;
+import org.openjfx.drawing.*;
 import org.openjfx.kernels.*;
 import org.openjfx.loader.ImageLoader;
 import org.openjfx.transformer.ImageTransformer;
@@ -107,6 +104,7 @@ public class FXMLController implements Initializable {
     @FXML
     protected void onPolygonalAreaRadioButtonSelected() {
         sliderLayout.setDisable(true);
+        areaSelector = new PolygonalAreaSelector();
     }
 
     @FXML
@@ -176,8 +174,14 @@ public class FXMLController implements Initializable {
 
     private void initListeners() {
         canvas.setOnMouseDragged(event -> {
+            if (event.getButton() == MouseButton.SECONDARY) {
+                areaSelector.moveTo((int) event.getX(), (int) event.getY());
+                areaPainter.paint(areaSelector.get());
+            }
+        });
+        canvas.setOnMouseClicked(event -> {
             if (event.getButton() == MouseButton.PRIMARY) {
-                areaSelector.moveBy((int) event.getX(), (int) event.getY());
+                areaSelector.addPoint((int) event.getX(), (int) event.getY());
                 areaPainter.paint(areaSelector.get());
             }
         });
