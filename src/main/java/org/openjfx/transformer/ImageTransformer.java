@@ -32,6 +32,7 @@ public class ImageTransformer {
         var pixelReader = readOnlyImage.getPixelReader();
         var pixelWriter = image.getPixelWriter();
         area.forEach(point -> {
+            if (!doesPointFitInImageBounds(point)) return;
             var transformedPixelColor = computeColor(pixelReader, point);
             pixelWriter.setColor((int) point.getX(), (int) point.getY(), transformedPixelColor);
         });
@@ -74,16 +75,12 @@ public class ImageTransformer {
         return Math.min(value, maxValue);
     }
 
+    private boolean doesPointFitInImageBounds(Point2D point) {
+        return doesPointFitInImageBounds((int) point.getX(), (int) point.getY());
+    }
+
     private boolean doesPointFitInImageBounds(int x, int y) {
         return x >= 0 && x < width && y >= 0 && y < height;
-    }
-
-    public double getImageHeight() {
-        return height;
-    }
-
-    public double getImageWidth() {
-        return width;
     }
 
     public static class Builder {
