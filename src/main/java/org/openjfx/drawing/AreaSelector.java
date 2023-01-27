@@ -8,5 +8,5 @@ public interface AreaSelector {
 
     void addPoint(int x, int y);
 
-    void moveBy(int x, int y);
+    void moveTo(int x, int y);
 }

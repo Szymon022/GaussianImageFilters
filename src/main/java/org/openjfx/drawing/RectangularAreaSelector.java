@@ -27,6 +27,6 @@ public class RectangularAreaSelector implements AreaSelector {
     }
 
     @Override
-    public void moveBy(int x, int y) {
+    public void moveTo(int x, int y) {
     }
 }
