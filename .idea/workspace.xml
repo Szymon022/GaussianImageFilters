@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe233611-3213-47a6-ba58-8b0965fd8516" name="Changes" comment="Add placeholder Area abstract class">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/transformer/ImageTransformer.java" afterDir="false" />
+    <list default="true" id="fe233611-3213-47a6-ba58-8b0965fd8516" name="Changes" comment="Improve Kernel code quality">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/drawing/AreaPainter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/drawing/AreaSelector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/drawing/CircleAreaSelector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/drawing/PolygonalAreaSelector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/drawing/RectangularAreaSelector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/FXMLController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/FXMLController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/geometry/Area.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/geometry/Area.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/kernels/Kernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/kernels/Kernel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/loader/ImageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/loader/ImageLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/area/CircularArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/area/CircularArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/area/RectangularArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/area/RectangularArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/transformer/ImageTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/transformer/ImageTransformer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/openjfx/scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/openjfx/scene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +74,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -146,6 +151,7 @@
         <item itemvalue="Gradle.ImageFilters [build]" />
         <item itemvalue="Gradle.ImageFilters [run]" />
         <item itemvalue="Gradle.ImageFilters [build]" />
+        <item itemvalue="Gradle.ImageFilters [run]" />
       </list>
     </recent_temporary>
   </component>
@@ -193,15 +199,95 @@
       <option name="project" value="LOCAL" />
       <updated>1673966253481</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add PolygonalArea">
+      <created>1674508075263</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1674508075263</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fix divider computation. Delete unused methods.">
+      <created>1674576894299</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1674576894299</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fix ImageTransformer so that it reads from different copy of provided image then it writes to.">
+      <created>1674577053158</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1674577053158</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Improve Kernel code quality">
+      <created>1674581957473</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1674581957473</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add UI through Scene builder" />
     <MESSAGE value="Added menu bar. Minor ui improvements" />
     <MESSAGE value="Add onClick methods that will probably be needed in the near future" />
     <MESSAGE value="Add placeholder Area abstract class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add placeholder Area abstract class" />
+    <MESSAGE value="Add PolygonalArea" />
+    <MESSAGE value="Fix divider computation. Delete unused methods" />
+    <MESSAGE value="Fix divider computation. Delete unused methods." />
+    <MESSAGE value="Fix ImageTransformer so that it reads from different copy of provided image then it writes to." />
+    <MESSAGE value="Improve Kernel code quality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve Kernel code quality" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/openjfx/drawing/AreaPainter.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/openjfx/drawing/AreaPainter.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/openjfx/drawing/CircleAreaSelector.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/openjfx/drawing/CircleAreaSelector.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/openjfx/drawing/AreaPainter.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/openjfx/drawing/AreaPainter.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
