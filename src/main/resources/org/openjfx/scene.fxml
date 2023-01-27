@@ -49,7 +49,7 @@
                                     <Cursor fx:constant="DEFAULT" />
                                  </cursor>
                                  <viewport>
-                                    <Rectangle2D height="800.0" width="828.0" />
+                                    <Rectangle2D />
                                  </viewport>
                                  <image>
                                     <Image url="@../../../../../../../Downloads/image-asset.png" />

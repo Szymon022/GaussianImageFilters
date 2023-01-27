@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe233611-3213-47a6-ba58-8b0965fd8516" name="Changes" comment="Improve Kernel code quality">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/drawing/AreaPainter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/drawing/AreaSelector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/drawing/CircleAreaSelector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/drawing/PolygonalAreaSelector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/drawing/RectangularAreaSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/FXMLController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/FXMLController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/area/CircularArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/area/CircularArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/area/RectangularArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/area/RectangularArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/transformer/ImageTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/transformer/ImageTransformer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/openjfx/scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/openjfx/scene.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="fe233611-3213-47a6-ba58-8b0965fd8516" name="Changes" comment="Update UI" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -227,7 +215,49 @@
       <option name="project" value="LOCAL" />
       <updated>1674581957473</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add AreSelector">
+      <created>1674853331241</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1674853331241</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add RectangularAreaSelector and CircleAreaSelector">
+      <created>1674853455621</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1674853455621</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add AreaPainter">
+      <created>1674853495277</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1674853495277</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add check if point fits in image bounds in ImageTransformer">
+      <created>1674853542550</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1674853542550</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add PolygonalAreaSelector">
+      <created>1674853564252</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1674853564252</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Update UI">
+      <created>1674853575237</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1674853575237</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -251,19 +281,25 @@
     <MESSAGE value="Fix divider computation. Delete unused methods." />
     <MESSAGE value="Fix ImageTransformer so that it reads from different copy of provided image then it writes to." />
     <MESSAGE value="Improve Kernel code quality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve Kernel code quality" />
+    <MESSAGE value="Add AreSelector" />
+    <MESSAGE value="Add RectangularAreaSelector and CircleAreaSelector" />
+    <MESSAGE value="Add AreaPainter" />
+    <MESSAGE value="Add check if point fits in image bounds in ImageTransformer" />
+    <MESSAGE value="Add PolygonalAreaSelector" />
+    <MESSAGE value="Update UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update UI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/openjfx/drawing/AreaPainter.java</url>
-          <line>45</line>
+          <line>43</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/openjfx/drawing/AreaPainter.java</url>
-          <line>46</line>
+          <line>44</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -278,12 +314,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/openjfx/drawing/AreaPainter.java</url>
-          <line>47</line>
+          <line>45</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/openjfx/drawing/AreaPainter.java</url>
-          <line>49</line>
+          <line>47</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
