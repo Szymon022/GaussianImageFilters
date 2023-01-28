@@ -1,7 +1,11 @@
 package org.openjfx.loader;
 
 import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.Image;
+import javafx.scene.image.PixelReader;
+import javafx.scene.image.PixelWriter;
 import javafx.scene.image.WritableImage;
+import javafx.scene.paint.Color;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -26,6 +30,22 @@ public class ImageIO {
         } catch (IOException e) {
 
         }
+    }
+
+    public static Image copy(Image image) {
+        int height = (int) image.getHeight();
+        int width = (int) image.getWidth();
+        var pixelReader = image.getPixelReader();
+        WritableImage writableImage = new WritableImage(width, height);
+        var pixelWriter = writableImage.getPixelWriter();
+
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                var color = pixelReader.getColor(x, y);
+                pixelWriter.setColor(x, y, color);
+            }
+        }
+        return writableImage;
     }
 
     private static BufferedImage deepClone(BufferedImage bufferedImage) {

@@ -123,6 +123,7 @@ public class FXMLController implements Initializable {
             ImageTransformer transformer = imageTransformerBuilder.build();
             Image transformedImage = transformer.transformArea(areaSelector.get());
             imageView.setImage(transformedImage);
+            imageTransformerBuilder.setImage(imageView.getImage());
         }
     }
 
@@ -158,10 +159,6 @@ public class FXMLController implements Initializable {
             canvas.setHeight(height);
             canvas.setWidth(width);
         }
-    }
-
-    @FXML
-    protected void onResetMenuItemClick() {
     }
 
     private void initListeners() {
