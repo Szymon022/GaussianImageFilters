@@ -21,6 +21,7 @@ public class PolygonalArea extends Area {
 
     @Override
     public void forEach(Consumer<Point2D> action) {
+        if (!isClosed) return;
         var edgeTable = EdgeTable.fromVertices(vertices);
         if (edgeTable == null) return;
         var activeEdgeTable = new LinkedList<Edge>();
