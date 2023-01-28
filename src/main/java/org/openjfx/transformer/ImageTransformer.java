@@ -7,9 +7,10 @@ import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;
 import org.openjfx.area.Area;
 import org.openjfx.kernels.Kernel;
-import org.openjfx.loader.ImageLoader;
+import org.openjfx.loader.ImageIO;
 
 import java.io.File;
+import java.util.Objects;
 
 public class ImageTransformer {
 
@@ -20,8 +21,13 @@ public class ImageTransformer {
     private double height;
 
     public ImageTransformer(ImageTransformer.Builder imageTransformerBuilder) {
-        this.image = ImageLoader.load(imageTransformerBuilder.imageFile);
-        this.readOnlyImage = ImageLoader.load(imageTransformerBuilder.imageFile);
+        if (imageTransformerBuilder.image != null) {
+            this.readOnlyImage = imageTransformerBuilder.image;
+            this.image = (WritableImage) ImageIO.copy(readOnlyImage);
+        } else {
+            this.image = ImageIO.load(imageTransformerBuilder.imageFile);
+            this.readOnlyImage = ImageIO.load(imageTransformerBuilder.imageFile);
+        }
         this.kernel = imageTransformerBuilder.kernel;
         assert image != null;
         width = image.getWidth();
@@ -86,6 +92,7 @@ public class ImageTransformer {
     public static class Builder {
 
         private File imageFile;
+        private Image image = null;
         private Kernel kernel;
 
         public Builder() {
@@ -95,6 +102,11 @@ public class ImageTransformer {
 
         public Builder setImage(File file) {
             imageFile = file;
+            return this;
+        }
+
+        public Builder setImage(Image image) {
+            this.image = image;
             return this;
         }
 

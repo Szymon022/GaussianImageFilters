@@ -4,18 +4,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.openjfx.drawing.*;
 import org.openjfx.kernels.*;
-import org.openjfx.loader.ImageLoader;
+import org.openjfx.loader.ImageIO;
 import org.openjfx.transformer.ImageTransformer;
 
 import java.io.File;
@@ -124,6 +123,7 @@ public class FXMLController implements Initializable {
             ImageTransformer transformer = imageTransformerBuilder.build();
             Image transformedImage = transformer.transformArea(areaSelector.get());
             imageView.setImage(transformedImage);
+            imageTransformerBuilder.setImage(imageView.getImage());
         }
     }
 
@@ -135,6 +135,12 @@ public class FXMLController implements Initializable {
 
     @FXML
     protected void onSaveAsMenuItemClick() {
+        Stage stage = new Stage();
+        File targetFile = fileChooser.showSaveDialog(stage);
+        var image = imageView.getImage();
+        if (targetFile != null && image instanceof WritableImage) {
+            ImageIO.save((WritableImage) imageView.getImage(), targetFile);
+        }
     }
 
     @FXML
@@ -143,7 +149,7 @@ public class FXMLController implements Initializable {
         File image = fileChooser.showOpenDialog(stage);
         if (image != null) {
             imageTransformerBuilder.setImage(image);
-            var loadedImage = ImageLoader.load(image);
+            var loadedImage = ImageIO.load(image);
             imageView.setImage(loadedImage);
             assert loadedImage != null;
             var height = loadedImage.getHeight();
@@ -153,10 +159,6 @@ public class FXMLController implements Initializable {
             canvas.setHeight(height);
             canvas.setWidth(width);
         }
-    }
-
-    @FXML
-    protected void onResetMenuItemClick() {
     }
 
     private void initListeners() {
