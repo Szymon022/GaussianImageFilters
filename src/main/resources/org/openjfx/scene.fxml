@@ -16,6 +16,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -31,11 +32,6 @@
                         <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" onAction="#onSaveAsMenuItemClick" text="Save as..." />
                   </items>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="Edit">
-                     <items>
-                        <MenuItem fx:id="resetMenuItem" mnemonicParsing="false" onAction="#onResetMenuItemClick" text="Reset" />
-                     </items>
-                  </Menu>
               </menus>
             </MenuBar>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -62,7 +58,7 @@
                            <children>
                               <VBox layoutX="71.0" layoutY="293.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <VBox prefHeight="200.0" prefWidth="268.0">
+                                    <VBox prefHeight="248.0" prefWidth="295.0">
                                        <children>
                                           <Label text="Filter area">
                                              <padding>
@@ -97,28 +93,30 @@
                                                 <Insets bottom="8.0" />
                                              </VBox.margin>
                                           </RadioButton>
-                                          <VBox fx:id="sliderLayout" disable="true" prefHeight="200.0" prefWidth="100.0">
+                                          <VBox fx:id="sliderLayout" disable="true" prefHeight="83.0" prefWidth="295.0">
                                              <children>
                                                 <Label prefHeight="18.0" prefWidth="82.0" text="Radius">
                                                    <padding>
                                                       <Insets left="8.0" right="8.0" top="4.0" />
                                                    </padding>
                                                 </Label>
-                                                <Slider fx:id="radiusSlider" min="10.0" prefHeight="47.0" prefWidth="219.0" showTickLabels="true" showTickMarks="true" value="10.0">
+                                                <Slider fx:id="radiusSlider" max="300.0" min="10.0" prefHeight="47.0" prefWidth="219.0" showTickLabels="true" showTickMarks="true" value="10.0">
                                                    <VBox.margin>
                                                       <Insets left="8.0" right="8.0" />
                                                    </VBox.margin>
                                                 </Slider>
                                              </children>
                                           </VBox>
-                                          <RadioButton fx:id="polygonalAreaRadioButton" mnemonicParsing="false" onAction="#onPolygonalAreaRadioButtonSelected" text="Polygonal area" toggleGroup="$filterArea">
-                                             <padding>
-                                                <Insets left="8.0" right="8.0" top="4.0" />
-                                             </padding>
-                                             <VBox.margin>
-                                                <Insets bottom="8.0" />
-                                             </VBox.margin>
-                                          </RadioButton>
+                                          <HBox prefHeight="30.0" prefWidth="295.0">
+                                             <children>
+                                                <RadioButton fx:id="polygonalAreaRadioButton" mnemonicParsing="false" onAction="#onPolygonalAreaRadioButtonSelected" prefHeight="44.0" prefWidth="140.0" text="Polygonal area" toggleGroup="$filterArea">
+                                                   <padding>
+                                                      <Insets left="8.0" right="8.0" top="4.0" />
+                                                   </padding>
+                                                </RadioButton>
+                                                <Button fx:id="clearPolygonButton" disable="true" minHeight="44.0" mnemonicParsing="false" onAction="#onClearPolygonButtonClick" prefHeight="30.0" prefWidth="106.0" text="Wyczyść" />
+                                             </children>
+                                          </HBox>
                                        </children>
                                        <VBox.margin>
                                           <Insets bottom="16.0" />

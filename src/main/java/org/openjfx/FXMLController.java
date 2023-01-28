@@ -29,35 +29,11 @@ public class FXMLController implements Initializable {
     @FXML
     private Canvas canvas;
     @FXML
-    private RadioButton wholeImageRadioButton;
-    @FXML
-    private RadioButton circularAreaRadioButton;
-    @FXML
-    private RadioButton polygonalAreaRadioButton;
-    @FXML
-    private RadioButton identityMatrixKernelRadioButton;
-    @FXML
-    private RadioButton blur3x3MatrixKernelRadioButton;
-    @FXML
-    private RadioButton blur5x5MatrixKernelRadioButton;
-    @FXML
-    private RadioButton sharpen3x3MatrixKernelRadioButton;
-    @FXML
-    private RadioButton sharpen5x5MatrixKernelRadioButton;
-    @FXML
-    private RadioButton edgeDetectionMatrixKernelRadioButton;
-    @FXML
-    private Button applyButton;
-    @FXML
     private Slider radiusSlider;
     @FXML
     private VBox sliderLayout;
     @FXML
-    private MenuItem saveAsMenuItem;
-    @FXML
-    private MenuItem openMenuItem;
-    @FXML
-    private MenuItem resetMenuItem;
+    private Button clearPolygonButton;
 
     private ImageTransformer.Builder imageTransformerBuilder;
     private FileChooser fileChooser;
@@ -77,11 +53,13 @@ public class FXMLController implements Initializable {
                 (int) canvas.getHeight()
         );
         initListeners();
+        onWholeImageRadioButtonSelected();
     }
 
     @FXML
     protected void onWholeImageRadioButtonSelected() {
         sliderLayout.setDisable(true);
+        clearPolygonButton.setDisable(true);
         areaSelector = new RectangularAreaSelector(
                 0,
                 0,
@@ -94,6 +72,7 @@ public class FXMLController implements Initializable {
     @FXML
     protected void onCircularAreaRadioButtonSelected() {
         sliderLayout.setDisable(false);
+        clearPolygonButton.setDisable(true);
         areaSelector = new CircleAreaSelector();
         var circularAreaSelector = (CircleAreaSelector) areaSelector;
         circularAreaSelector.addPoint(0, 0);
@@ -104,7 +83,9 @@ public class FXMLController implements Initializable {
     @FXML
     protected void onPolygonalAreaRadioButtonSelected() {
         sliderLayout.setDisable(true);
+        clearPolygonButton.setDisable(false);
         areaSelector = new PolygonalAreaSelector();
+        areaPainter.paint(areaSelector.get());
     }
 
     @FXML
@@ -144,6 +125,12 @@ public class FXMLController implements Initializable {
             Image transformedImage = transformer.transformArea(areaSelector.get());
             imageView.setImage(transformedImage);
         }
+    }
+
+    @FXML
+    protected void onClearPolygonButtonClick() {
+        areaSelector = new PolygonalAreaSelector();
+        areaPainter.paint(areaSelector.get());
     }
 
     @FXML
