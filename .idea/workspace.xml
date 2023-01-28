@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe233611-3213-47a6-ba58-8b0965fd8516" name="Changes" comment="Add Polygon area drawing to ui">
+    <list default="true" id="fe233611-3213-47a6-ba58-8b0965fd8516" name="Changes" comment="Add null return if edge table cannot be created due to lack of vertices.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/FXMLController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/FXMLController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/area/PolygonalArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/area/PolygonalArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/geometry/EdgeTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/geometry/EdgeTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/openjfx/scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/openjfx/scene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/loader/ImageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/loader/ImageIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/transformer/ImageTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/transformer/ImageTransformer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,7 +304,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674856263062</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Add Clear polygon button. Delete Edit-&gt;reset menu item">
+      <created>1674893785175</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1674893785176</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Add null return if edge table cannot be created due to lack of vertices.">
+      <created>1674893821973</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1674893821973</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -342,7 +355,9 @@
     <MESSAGE value="Rename moveBy to moveTo" />
     <MESSAGE value="Implement PolygonalAreaSelector properly" />
     <MESSAGE value="Add Polygon area drawing to ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Polygon area drawing to ui" />
+    <MESSAGE value="Add Clear polygon button. Delete Edit-&gt;reset menu item" />
+    <MESSAGE value="Add null return if edge table cannot be created due to lack of vertices." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add null return if edge table cannot be created due to lack of vertices." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

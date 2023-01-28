@@ -7,7 +7,7 @@ import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;
 import org.openjfx.area.Area;
 import org.openjfx.kernels.Kernel;
-import org.openjfx.loader.ImageLoader;
+import org.openjfx.loader.ImageIO;
 
 import java.io.File;
 
@@ -20,8 +20,8 @@ public class ImageTransformer {
     private double height;
 
     public ImageTransformer(ImageTransformer.Builder imageTransformerBuilder) {
-        this.image = ImageLoader.load(imageTransformerBuilder.imageFile);
-        this.readOnlyImage = ImageLoader.load(imageTransformerBuilder.imageFile);
+        this.image = ImageIO.load(imageTransformerBuilder.imageFile);
+        this.readOnlyImage = ImageIO.load(imageTransformerBuilder.imageFile);
         this.kernel = imageTransformerBuilder.kernel;
         assert image != null;
         width = image.getWidth();
