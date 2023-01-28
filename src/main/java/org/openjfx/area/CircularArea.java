@@ -36,4 +36,16 @@ public class CircularArea extends Area {
     private int squared(int number) {
         return number * number;
     }
+
+    public int getXCenter() {
+        return xCenter;
+    }
+
+    public int getYCenter() {
+        return yCenter;
+    }
+
+    public int getRadius() {
+        return radius;
+    }
 }

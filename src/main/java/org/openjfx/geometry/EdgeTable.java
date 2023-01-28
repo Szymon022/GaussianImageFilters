@@ -2,6 +2,7 @@ package org.openjfx.geometry;
 
 import javafx.geometry.Point2D;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,6 +16,7 @@ public class EdgeTable {
     }
 
     public static EdgeTable fromVertices(List<Point2D> vertices) {
+        if (vertices.size() == 0) return null;
         var edgeTable = new EdgeTable(new LinkedList<>());
         var size = vertices.size();
         for (int i = 0; i < size; i++) {

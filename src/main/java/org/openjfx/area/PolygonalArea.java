@@ -12,14 +12,17 @@ import java.util.function.Consumer;
 public class PolygonalArea extends Area {
 
     private final List<Point2D> vertices;
+    private boolean isClosed;
 
-    public PolygonalArea(List<Point2D> vertices) {
+    public PolygonalArea(List<Point2D> vertices, boolean isClosed) {
         this.vertices = vertices;
+        this.isClosed = isClosed;
     }
 
     @Override
     public void forEach(Consumer<Point2D> action) {
         var edgeTable = EdgeTable.fromVertices(vertices);
+        if (edgeTable == null) return;
         var activeEdgeTable = new LinkedList<Edge>();
         var scanline = edgeTable.getEntry(0).getY();
 
@@ -41,5 +44,13 @@ public class PolygonalArea extends Area {
             activeEdgeTable.forEach(Edge::incrementXMinByA);
         }
 
+    }
+
+    public boolean isClosed() {
+        return isClosed;
+    }
+
+    public List<Point2D> getVertices() {
+        return vertices;
     }
 }

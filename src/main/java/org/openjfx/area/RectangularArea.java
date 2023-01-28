@@ -27,4 +27,19 @@ public class RectangularArea extends Area {
         }
     }
 
+    public int getXStart() {
+        return xStart;
+    }
+
+    public int getYStart() {
+        return yStart;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
 }
