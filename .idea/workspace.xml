@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe233611-3213-47a6-ba58-8b0965fd8516" name="Changes" comment="Add applying multiple areas and filters to the same image which enables more complex editing">
+    <list default="true" id="fe233611-3213-47a6-ba58-8b0965fd8516" name="Changes" comment="Fix bug, where not closed polygon area could transform image">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/FXMLController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/FXMLController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/loader/ImageIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/loader/ImageIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/drawing/PolygonalAreaSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/drawing/PolygonalAreaSelector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/transformer/ImageTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/transformer/ImageTransformer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -332,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674900429053</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Fix bug, where not closed polygon area could transform image">
+      <created>1674901818255</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1674901818255</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -347,7 +353,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added menu bar. Minor ui improvements" />
     <MESSAGE value="Add onClick methods that will probably be needed in the near future" />
     <MESSAGE value="Add placeholder Area abstract class" />
     <MESSAGE value="Add PolygonalArea" />
@@ -372,7 +377,8 @@
     <MESSAGE value="Add null return if edge table cannot be created due to lack of vertices." />
     <MESSAGE value="Add file saving" />
     <MESSAGE value="Add applying multiple areas and filters to the same image which enables more complex editing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add applying multiple areas and filters to the same image which enables more complex editing" />
+    <MESSAGE value="Fix bug, where not closed polygon area could transform image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bug, where not closed polygon area could transform image" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

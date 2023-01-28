@@ -4,6 +4,7 @@ import javafx.geometry.Point2D;
 import org.openjfx.area.Area;
 import org.openjfx.area.PolygonalArea;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class PolygonalAreaSelector implements AreaSelector {

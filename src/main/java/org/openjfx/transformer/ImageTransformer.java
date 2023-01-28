@@ -10,7 +10,6 @@ import org.openjfx.kernels.Kernel;
 import org.openjfx.loader.ImageIO;
 
 import java.io.File;
-import java.util.Objects;
 
 public class ImageTransformer {
 
