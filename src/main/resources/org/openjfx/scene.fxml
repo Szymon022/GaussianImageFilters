@@ -1,11 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.FXMLController">
-    <children>
-        <Label fx:id="label" text="Label" />
-    </children>
-</StackPane>
+<AnchorPane prefHeight="826.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.FXMLController">
+   <children>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar prefHeight="22.0" prefWidth="1100.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="openMenuItem" mnemonicParsing="false" onAction="#onOpenMenuItemClick" text="Open..." />
+                        <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" onAction="#onSaveAsMenuItemClick" text="Save as..." />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <SplitPane dividerPositions="0.7341137123745819" prefHeight="802.0" prefWidth="1124.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0">
+                           <children>
+                              <ImageView fx:id="imageView" fitHeight="800.0" fitWidth="828.0" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                                 <image>
+                                    <Image url="@../../../../../../../Downloads/image-asset.png" />
+                                 </image>
+                              </ImageView>
+                              <Canvas fx:id="canvas" height="800.0" width="828.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" SplitPane.resizableWithParent="false">
+                           <children>
+                              <VBox layoutX="71.0" layoutY="293.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <VBox prefHeight="248.0" prefWidth="295.0">
+                                       <children>
+                                          <Label text="Filter area">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="4.0" />
+                                             </VBox.margin>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                          </Label>
+                                          <RadioButton fx:id="wholeImageRadioButton" mnemonicParsing="false" onAction="#onWholeImageRadioButtonSelected" selected="true" text="Whole image area">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                             <VBox.margin>
+                                                <Insets bottom="8.0" />
+                                             </VBox.margin>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="filterArea" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="circularAreaRadioButton" mnemonicParsing="false" onAction="#onCircularAreaRadioButtonSelected" text="Circular image area" toggleGroup="$filterArea">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                             <VBox.margin>
+                                                <Insets bottom="8.0" />
+                                             </VBox.margin>
+                                          </RadioButton>
+                                          <VBox fx:id="sliderLayout" disable="true" prefHeight="83.0" prefWidth="295.0">
+                                             <children>
+                                                <Label prefHeight="18.0" prefWidth="82.0" text="Radius">
+                                                   <padding>
+                                                      <Insets left="8.0" right="8.0" top="4.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Slider fx:id="radiusSlider" max="300.0" min="10.0" prefHeight="47.0" prefWidth="219.0" showTickLabels="true" showTickMarks="true" value="10.0">
+                                                   <VBox.margin>
+                                                      <Insets left="8.0" right="8.0" />
+                                                   </VBox.margin>
+                                                </Slider>
+                                             </children>
+                                          </VBox>
+                                          <HBox prefHeight="30.0" prefWidth="295.0">
+                                             <children>
+                                                <RadioButton fx:id="polygonalAreaRadioButton" mnemonicParsing="false" onAction="#onPolygonalAreaRadioButtonSelected" prefHeight="44.0" prefWidth="140.0" text="Polygonal area" toggleGroup="$filterArea">
+                                                   <padding>
+                                                      <Insets left="8.0" right="8.0" top="4.0" />
+                                                   </padding>
+                                                </RadioButton>
+                                                <Button fx:id="clearPolygonButton" disable="true" minHeight="44.0" mnemonicParsing="false" onAction="#onClearPolygonButtonClick" prefHeight="30.0" prefWidth="106.0" text="Wyczyść" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="16.0" />
+                                       </VBox.margin>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Label text="Filter selection">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <RadioButton fx:id="identityMatrixKernelRadioButton" mnemonicParsing="false" onAction="#onIdentityMatrixRadioButtonSelected" selected="true" text="Identity matrix">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="filterSelection" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="blur3x3MatrixKernelRadioButton" mnemonicParsing="false" onAction="#on3x3BlurMatrixRadioButtonSelected" text="Gaussian blur 3x3 kernel" toggleGroup="$filterSelection">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                          </RadioButton>
+                                          <RadioButton fx:id="blur5x5MatrixKernelRadioButton" mnemonicParsing="false" onAction="#on5x5BlurMatrixRadioButtonSelected" text="Gaussian blur 5x5 kernel" toggleGroup="$filterSelection">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                          </RadioButton>
+                                          <RadioButton fx:id="sharpen3x3MatrixKernelRadioButton" mnemonicParsing="false" onAction="#on3x3SharpenMatrixRadioButtonSelected" text="Gaussian sharpen 3x3 kernel" toggleGroup="$filterSelection">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                          </RadioButton>
+                                          <RadioButton fx:id="sharpen5x5MatrixKernelRadioButton" mnemonicParsing="false" onAction="#onEmbossMatrixRadioButtonSelected" text="Emboss 3x3 kernel" toggleGroup="$filterSelection">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                          </RadioButton>
+                                          <RadioButton fx:id="edgeDetectionMatrixKernelRadioButton" mnemonicParsing="false" onAction="#onEdgeDetectionMatrixRadioButtonSelected" text="Edge detection 3x3 kernel" toggleGroup="$filterSelection">
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" top="4.0" />
+                                             </padding>
+                                          </RadioButton>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="applyButton" alignment="TOP_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onApplyButtonClick" prefHeight="30.0" prefWidth="289.0" text="Apply filter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

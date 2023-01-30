@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe233611-3213-47a6-ba58-8b0965fd8516" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/FXMLController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/scene.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/styles.css" afterDir="false" />
+    <list default="true" id="fe233611-3213-47a6-ba58-8b0965fd8516" name="Changes" comment="Fix bug, where not closed polygon area could transform image">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/drawing/PolygonalAreaSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/drawing/PolygonalAreaSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/transformer/ImageTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/transformer/ImageTransformer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +64,15 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2KPkOSmnpwC2HCyXgwa6MdBG8V5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -85,12 +81,19 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/org" />
+      <recent name="$PROJECT_DIR$/src/main/resources/openjfx" />
+    </key>
+  </component>
   <component name="RunManager" selected="Gradle.ImageFilters [run]">
     <configuration name="ImageFilters [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -138,6 +141,9 @@
       <list>
         <item itemvalue="Gradle.ImageFilters [run]" />
         <item itemvalue="Gradle.ImageFilters [build]" />
+        <item itemvalue="Gradle.ImageFilters [run]" />
+        <item itemvalue="Gradle.ImageFilters [build]" />
+        <item itemvalue="Gradle.ImageFilters [run]" />
       </list>
     </recent_temporary>
   </component>
@@ -150,6 +156,232 @@
       <option name="presentableId" value="Default" />
       <updated>1673883574552</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add UI through Scene builder">
+      <created>1673889829302</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673889829302</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added menu bar. Minor ui improvements">
+      <created>1673897609041</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673897609041</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add onClick methods that will probably be needed in the near future">
+      <created>1673898574010</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673898574010</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add onClick methods that will probably be needed in the near future">
+      <created>1673898807265</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673898807265</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add placeholder Area abstract class">
+      <created>1673966253481</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1673966253481</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add PolygonalArea">
+      <created>1674508075263</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1674508075263</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fix divider computation. Delete unused methods.">
+      <created>1674576894299</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1674576894299</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fix ImageTransformer so that it reads from different copy of provided image then it writes to.">
+      <created>1674577053158</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1674577053158</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Improve Kernel code quality">
+      <created>1674581957473</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1674581957473</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add AreSelector">
+      <created>1674853331241</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1674853331241</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add RectangularAreaSelector and CircleAreaSelector">
+      <created>1674853455621</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1674853455621</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add AreaPainter">
+      <created>1674853495277</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1674853495277</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add check if point fits in image bounds in ImageTransformer">
+      <created>1674853542550</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1674853542550</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add PolygonalAreaSelector">
+      <created>1674853564252</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1674853564252</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Update UI">
+      <created>1674853575237</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1674853575237</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fix bug with misalignment of drawn area and image transformation">
+      <created>1674853789815</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1674853789815</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add isClosed to PolygonalArea">
+      <created>1674856161833</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1674856161833</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Add Polygon drawing methods to AreaPainter">
+      <created>1674856186802</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1674856186802</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Rename moveBy to moveTo">
+      <created>1674856217681</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1674856217681</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Implement PolygonalAreaSelector properly">
+      <created>1674856249157</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1674856249157</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Add Polygon area drawing to ui">
+      <created>1674856263062</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1674856263062</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Add Clear polygon button. Delete Edit-&gt;reset menu item">
+      <created>1674893785175</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1674893785176</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Add null return if edge table cannot be created due to lack of vertices.">
+      <created>1674893821973</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1674893821973</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Add file saving">
+      <created>1674896788520</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1674896788520</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Add applying multiple areas and filters to the same image which enables more complex editing">
+      <created>1674900429053</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1674900429053</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Fix bug, where not closed polygon area could transform image">
+      <created>1674901818255</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1674901818255</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add onClick methods that will probably be needed in the near future" />
+    <MESSAGE value="Add placeholder Area abstract class" />
+    <MESSAGE value="Add PolygonalArea" />
+    <MESSAGE value="Fix divider computation. Delete unused methods" />
+    <MESSAGE value="Fix divider computation. Delete unused methods." />
+    <MESSAGE value="Fix ImageTransformer so that it reads from different copy of provided image then it writes to." />
+    <MESSAGE value="Improve Kernel code quality" />
+    <MESSAGE value="Add AreSelector" />
+    <MESSAGE value="Add RectangularAreaSelector and CircleAreaSelector" />
+    <MESSAGE value="Add AreaPainter" />
+    <MESSAGE value="Add check if point fits in image bounds in ImageTransformer" />
+    <MESSAGE value="Add PolygonalAreaSelector" />
+    <MESSAGE value="Update UI" />
+    <MESSAGE value="Update UI to properly display image" />
+    <MESSAGE value="Fix bug with misalignment of drawn area and image transformation" />
+    <MESSAGE value="Add isClosed to PolygonalArea" />
+    <MESSAGE value="Add Polygon drawing methods to AreaPainter" />
+    <MESSAGE value="Rename moveBy to moveTo" />
+    <MESSAGE value="Implement PolygonalAreaSelector properly" />
+    <MESSAGE value="Add Polygon area drawing to ui" />
+    <MESSAGE value="Add Clear polygon button. Delete Edit-&gt;reset menu item" />
+    <MESSAGE value="Add null return if edge table cannot be created due to lack of vertices." />
+    <MESSAGE value="Add file saving" />
+    <MESSAGE value="Add applying multiple areas and filters to the same image which enables more complex editing" />
+    <MESSAGE value="Fix bug, where not closed polygon area could transform image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bug, where not closed polygon area could transform image" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
